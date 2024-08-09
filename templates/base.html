@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    {% block others %}{% endblock %}
+</head>
+<body class="bg-black text-gray-100 font-primary">
+    {% block content %}
+    <!-- Your content goes here -->
+    {% endblock %}
+<script>
+    const nav = document.querySelector('nav')
+
+    document.addEventListener("scroll",e=>{
+            
+        if(scrollY>100){
+            nav.classList.add('bg-gray-900')
+          
+        }else{
+            nav.classList.remove('bg-gray-900')
+                
+        }
+    })
+
+</script>
+</body>
+</html>
